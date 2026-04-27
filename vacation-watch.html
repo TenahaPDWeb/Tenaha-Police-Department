@@ -1,53 +1,44 @@
-<div class="vw-container">
-  <h2>Vacation Watch Request</h2>
-
-  <form action="vacation-watch-submit.php" method="post">
-
-    <div class="vw-field">
-      <label>Full Name</label>
-      <input type="text" name="name" required>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Watch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vacation Watch</h1>
+    </header>
+    <div class="container">
+        <h2>Welcome to the Vacation Watch Page</h2>
+        <p>Please fill in your details for a smooth vacation experience!</p>
+        <p><strong>Current Date and Time:</strong> 2026-04-27 18:17:00 UTC</p>
     </div>
-
-    <div class="vw-field">
-      <label>Address to be Checked</label>
-      <textarea name="address" required></textarea>
-    </div>
-
-    <div class="vw-field">
-      <label>Departure Date</label>
-      <input type="date" name="departure_date" required>
-    </div>
-
-    <div class="vw-field">
-      <label>Return Date</label>
-      <input type="date" name="return_date" required>
-    </div>
-
-    <div class="vw-field">
-      <label>Local Emergency Contact (Name & Phone)</label>
-      <input type="text" name="contact" required>
-    </div>
-
-    <div class="vw-field">
-      <label>Authorized Visitors (Names / Vehicles)</label>
-      <textarea name="visitors"></textarea>
-    </div>
-
-    <div class="vw-field">
-      <label>Additional Notes</label>
-      <textarea name="notes"></textarea>
-    </div>
-
-    <div class="vw-checkbox">
-      <input type="checkbox" name="acknowledgment" required>
-      <label>
-        I hereby request a vacation watch of the listed property. I understand this service is provided as staffing allows and does not ensure continuous monitoring or guarantee against criminal activity. I agree to notify the Tenaha Police Department upon my return. I release and hold harmless the City of Tenaha, its officers, employees, and agents from any liability for loss, theft, or damage occurring during the requested period.
-      </label>
-    </div>
-
-    <div class="vw-submit">
-      <input type="submit" value="Submit Request">
-    </div>
-
-  </form>
-</div>
+</body>
+</html>
