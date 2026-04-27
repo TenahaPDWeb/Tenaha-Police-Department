@@ -1,1 +1,64 @@
-<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Vacation Watch Form</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n            padding: 20px;\n            background-color: #f4f4f4;\n            border: 1px solid #ccc;\n            border-radius: 5px;\n        }\n        h1 {\n            text-align: center;\n        }\n        label {\n            display: block;\n            margin: 10px 0 5px;\n        }\n        input[type=\"text\"], input[type=\"date\"], textarea {\n            width: 100%;\n            padding: 10px;\n            margin-bottom: 20px;\n            border: 1px solid #ccc;\n            border-radius: 5px;\n        }\n        button {\n            padding: 10px 15px;\n            background-color: #5cb85c;\n            color: white;\n            border: none;\n            border-radius: 5px;\n            cursor: pointer;\n        }\n        button:hover {\n            background-color: #4cae4c;\n        }\n        .print-button {\n            background-color: #007bff;\n            margin-top: 20px;\n        }\n        .print-button:hover {\n            background-color: #0056b3;\n        }\n        .checkbox {\n            margin: 20px 0;\n        }\n    </style>\n</head>\n<body>\n    <h1>Vacation Watch Form</h1>\n    <form>\n        <label for=\"fullName\">Full Name:</label>\n        <input type=\"text\" id=\"fullName\" name=\"fullName\" required>\n        \n        <label for=\"address\">Address to be Checked:</label>\n        <input type=\"text\" id=\"address\" name=\"address\" required>\n        \n        <label for=\"departureDate\">Departure Date:</label>\n        <input type=\"date\" id=\"departureDate\" name=\"departureDate\" required>\n        \n        <label for=\"returnDate\">Return Date:</label>\n        <input type=\"date\" id=\"returnDate\" name=\"returnDate\">\n        \n        <label for=\"emergencyContact\">Emergency Contact:</label>\n        <input type=\"text\" id=\"emergencyContact\" name=\"emergencyContact\" required>\n        \n        <label for=\"authorizedVisitors\">Authorized Visitors:</label>\n        <input type=\"text\" id=\"authorizedVisitors\" name=\"authorizedVisitors\">\n        \n        <label for=\"additionalNotes\">Additional Notes:</label>\n        <textarea id=\"additionalNotes\" name=\"additionalNotes\"></textarea>\n        \n        <div class=\"checkbox\">\n            <input type=\"checkbox\" id=\"acknowledgment\" name=\"acknowledgment\" required>\n            <label for=\"acknowledgment\">I acknowledge that the information provided is accurate.</label>\n        </div>\n        <button type=\"submit\">Submit</button>\n    </form>\n    <button class=\"print-button\" onclick=\"window.print()\">Print Form</button>\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Watch Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; color: #003366; }
+        h1, h2 { color: #003366; }
+        .form-section { margin-bottom: 20px; }
+        .underline { text-decoration: underline; display: inline-block; width: 100%; }
+        .instructions { margin-bottom: 20px; }
+        button { background-color: #003366; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+        button:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h1>Vacation Watch Request</h1>
+        <p><strong>Office Address:</strong> 123 Main St, Tenaha, TX 75974</p>
+        <p><strong>Office Hours:</strong> Monday - Friday, 8 AM - 5 PM</p>
+        <p>Please fill out the form below to request a vacation watch.</p>
+    </div>
+
+    <form>
+        <div class="form-section">
+            <h2>Property Owner Information</h2>
+            <label>Full Name: <span class="underline">___________________</span></label><br>
+            <label>Phone: <span class="underline">___________________</span></label><br>
+            <label>Email: <span class="underline">___________________</span></label>
+        </div>
+
+        <div class="form-section">
+            <h2>Property Information</h2>
+            <label>Address: <span class="underline">___________________</span></label><br>
+            <label>Departure Date: <span class="underline">___________________</span></label><br>
+            <label>Return Date: <span class="underline">___________________</span></label>
+        </div>
+
+        <div class="form-section">
+            <h2>Emergency Contact Information</h2>
+            <label>Contact Name: <span class="underline">___________________</span></label><br>
+            <label>Contact Phone: <span class="underline">___________________</span></label>
+        </div>
+
+        <div class="form-section">
+            <h2>Authorized Visitors & Vehicles</h2>
+            <label>Names of Visitors: <span class="underline">___________________</span></label><br>
+            <label>Vehicle Descriptions: <span class="underline">___________________</span></label>
+        </div>
+
+        <div class="form-section">
+            <h2>Additional Information</h2>
+            <label>Any other details: <span class="underline">___________________</span></label>
+        </div>
+
+        <div class="form-section">
+            <label><input type="checkbox"> I acknowledge that the above information is accurate.</label>
+        </div>
+
+        <button type="button" onclick="window.print();">Print Form</button>
+    </form>
+</body>
+</html>
