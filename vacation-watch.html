@@ -3,62 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vacation Watch Form</title>
+    <title>Vacation Watch Request Form</title>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Arial, sans-serif; color: #003366; }
-        h1, h2 { color: #003366; }
-        .form-section { margin-bottom: 20px; }
-        .underline { text-decoration: underline; display: inline-block; width: 100%; }
-        .instructions { margin-bottom: 20px; }
-        button { background-color: #003366; color: white; border: none; padding: 10px 20px; cursor: pointer; }
-        button:hover { opacity: 0.8; }
+        @page { size: 8.5in 11.5in; margin: 0.5in; }
+        .form-container { width: 100%; max-width: 8.5in; margin: 0 auto; background: white; padding: 0.3in; }
+        .header { text-align: center; margin-bottom: 0.2in; border-bottom: 2px solid #003366; padding-bottom: 0.1in; }
+        .header h1 { font-size: 18px; margin-bottom: 0.05in; }
+        .header p { font-size: 10px; margin: 0; }
+        .form-section { margin-bottom: 0.2in; }
+        .form-section h2 { font-size: 12px; border-bottom: 1px solid #003366; padding-bottom: 0.05in; margin-bottom: 0.08in; }
+        .form-row { display: flex; align-items: center; margin-bottom: 0.12in; gap: 0.08in; }
+        .form-row label { font-weight: bold; min-width: 120px; font-size: 10px; white-space: nowrap; }
+        .form-row .line { flex: 1; border-bottom: 1px solid #003366; height: 0.18in; }
+        .form-row.double { display: flex; gap: 0.2in; }
+        .form-row.double .field { flex: 1; display: flex; align-items: center; gap: 0.08in; }
+        .form-row.double .field label { min-width: auto; }
+        .form-row.double .field .line { flex: 1; }
+        .checkbox-row { display: flex; align-items: flex-start; gap: 0.08in; margin-bottom: 0.08in; }
+        .checkbox-row input { cursor: pointer; }
+        .checkbox-row label { font-weight: normal; margin: 0; font-size: 9px; line-height: 1.2; }
+        .acknowledgment { font-size: 9px; background-color: #f9f9f9; border-left: 2px solid #003366; padding: 0.08in; margin: 0.08in 0; }
+        .signature-section { display: flex; gap: 0.3in; margin-top: 0.2in; padding-top: 0.1in; border-top: 1px solid #003366; }
+        .signature-block { flex: 1; }
+        .signature-line { border-bottom: 1px solid #003366; height: 0.3in; margin-bottom: 0.04in; }
+        .signature-label { font-size: 9px; font-weight: bold; text-align: center; }
+        .footer { text-align: center; font-size: 8px; color: #666; margin-top: 0.1in; padding-top: 0.05in; }
+        @media screen { .print-button { display: block; margin: 20px auto; padding: 12px 30px; background-color: #003366; color: white; border: none; border-radius: 4px; font-size: 14px; font-weight: bold; cursor: pointer; width: 200px; } .print-button:hover { background-color: #00205a; } }
+        @media print { .print-button { display: none; } body { padding: 0; } }
     </style>
 </head>
 <body>
-    <div class="instructions">
-        <h1>Vacation Watch Request</h1>
-        <p><strong>Office Address:</strong> 123 Main St, Tenaha, TX 75974</p>
-        <p><strong>Office Hours:</strong> Monday - Friday, 8 AM - 5 PM</p>
-        <p>Please fill out the form below to request a vacation watch.</p>
+    <button class="print-button" onclick="window.print()">Print Form</button>
+    <div class="form-container">
+        <div class="header">
+            <h1>VACATION WATCH REQUEST FORM</h1>
+            <p>Tenaha Police Department</p>
+            <p>238 North George Bowers Drive, Tenaha, Texas 75974</p>
+            <p>(936) 248-3841 | Monday-Friday 8:00 AM - 5:00 PM</p>
+        </div>
+        <div class="form-section">
+            <h2>PROPERTY OWNER INFORMATION</h2>
+            <div class="form-row">
+                <label>Full Name:</label>
+                <div class="line"></div>
+            </div>
+            <div class="form-row double">
+                <div class="field"><label>Phone:</label><div class="line"></div></div>
+                <div class="field"><label>Email:</label><div class="line"></div></div>
+            </div>
+        </div>
+        <div class="form-section">
+            <h2>PROPERTY INFORMATION</h2>
+            <div class="form-row">
+                <label>Property Address:</label>
+                <div class="line"></div>
+            </div>
+            <div class="form-row double">
+                <div class="field"><label>Departure:</label><div class="line"></div></div>
+                <div class="field"><label>Return:</label><div class="line"></div></div>
+            </div>
+        </div>
+        <div class="form-section">
+            <h2>EMERGENCY CONTACT</h2>
+            <div class="form-row"><label>Name:</label><div class="line"></div></div>
+            <div class="form-row"><label>Phone:</label><div class="line"></div></div>
+        </div>
+        <div class="form-section">
+            <h2>AUTHORIZED VISITORS & VEHICLES</h2>
+            <div class="form-row"><label>Names/Descriptions:</label><div class="line"></div></div>
+        </div>
+        <div class="form-section">
+            <h2>ACKNOWLEDGMENT</h2>
+            <div class="checkbox-row">
+                <input type="checkbox"> I acknowledge information is accurate.
+            </div>
+            <div class="acknowledgment">
+                I understand this service is provided as staffing allows and does not ensure continuous monitoring or guarantee against criminal activity. I consent to law enforcement conducting periodic checks of my property during my absence.
+            </div>
+        </div>
+        <div class="signature-section">
+            <div class="signature-block"><div class="signature-line"></div><div class="signature-label">Signature</div></div>
+            <div class="signature-block"><div class="signature-line"></div><div class="signature-label">Date</div></div>
+        </div>
+        <div class="footer">© 2026 Tenaha Police Department. All Rights Reserved.</div>
     </div>
-
-    <form>
-        <div class="form-section">
-            <h2>Property Owner Information</h2>
-            <label>Full Name: <span class="underline">___________________</span></label><br>
-            <label>Phone: <span class="underline">___________________</span></label><br>
-            <label>Email: <span class="underline">___________________</span></label>
-        </div>
-
-        <div class="form-section">
-            <h2>Property Information</h2>
-            <label>Address: <span class="underline">___________________</span></label><br>
-            <label>Departure Date: <span class="underline">___________________</span></label><br>
-            <label>Return Date: <span class="underline">___________________</span></label>
-        </div>
-
-        <div class="form-section">
-            <h2>Emergency Contact Information</h2>
-            <label>Contact Name: <span class="underline">___________________</span></label><br>
-            <label>Contact Phone: <span class="underline">___________________</span></label>
-        </div>
-
-        <div class="form-section">
-            <h2>Authorized Visitors & Vehicles</h2>
-            <label>Names of Visitors: <span class="underline">___________________</span></label><br>
-            <label>Vehicle Descriptions: <span class="underline">___________________</span></label>
-        </div>
-
-        <div class="form-section">
-            <h2>Additional Information</h2>
-            <label>Any other details: <span class="underline">___________________</span></label>
-        </div>
-
-        <div class="form-section">
-            <label><input type="checkbox"> I acknowledge that the above information is accurate.</label>
-        </div>
-
-        <button type="button" onclick="window.print();">Print Form</button>
-    </form>
 </body>
+</html>
 </html>
